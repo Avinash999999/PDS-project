@@ -1,33 +1,21 @@
-# Housing Prices Prediction
+import pandas as pd
+from sklearn.model_selection import train_test_split
 
-This project predicts housing prices based on various features such as location, size, and other property characteristics. It uses machine learning techniques to create an accurate and reliable model.
+def preprocess_data(input_path, output_path):
+    # Load the raw dataset
+    data = pd.read_csv(input_path)
 
-## Description
+    # Example preprocessing steps
+    data.dropna(inplace=True)  # Drop rows with missing values
+    data = pd.get_dummies(data, drop_first=True)  # Encode categorical features
 
-The goal of this project is to:
-- Help homeowners, buyers, and real estate agents estimate property values.
-- Demonstrate the application of machine learning in real-world scenarios.
+    # Save the processed data
+    data.to_csv(output_path, index=False)
+    print(f"Data processed and saved to {output_path}")
 
-The dataset used contains information on houses, such as square footage, number of bedrooms and bathrooms, and neighborhood details.
+if __name__ == "__main__":
+    preprocess_data("data/raw_data.csv", "data/processed_data.csv")
 
-## Features
-- Exploratory Data Analysis (EDA) to uncover trends in housing data.
-- Data preprocessing: Handling missing values, encoding categorical features, and scaling numerical data.
-- Model training using algorithms like Linear Regression and Random Forest.
-- Evaluation of model performance with metrics like Mean Absolute Error (MAE) and R-squared.
-
-## Installation Instructions
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Avinash999999/housing-prices-prediction.git
-
- cd housing-prices-prediction
-
- pip install -r requirements.txt
-python src/train_model.py
-python src/predict.py --input data/sample_input.csv
-jupyter notebook notebooks/exploratory_analysis.ipynb
 
 
 
