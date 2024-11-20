@@ -22,4 +22,13 @@ The dataset used contains information on houses, such as square footage, number 
    ```bash
    git clone https://github.com/Avinash999999/housing-prices-prediction.git
 
+ cd housing-prices-prediction
+
+ pip install -r requirements.txt
+python src/train_model.py
+python src/predict.py --input data/sample_input.csv
+jupyter notebook notebooks/exploratory_analysis.ipynb
+
+
+
 
