@@ -20,6 +20,6 @@ The dataset used contains information on houses, such as square footage, number 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/housing-prices-prediction.git
+   git clone https://github.com/Avinash999999/housing-prices-prediction.git
 
 
